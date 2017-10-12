@@ -17,7 +17,22 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
+    try:
+        if a <= 0:
+            raise TriangleError('sides must be greater than 0')
+        elif b <= 0:
+            raise TriangleError('sides must be greater than 0')
+        elif c <= 0:
+            raise TriangleError('sides must be greater than 0')
+        elif a + b <= c:
+            raise TriangleError('sides must be greater than 0')
+        elif a + c <= b:
+            raise TriangleError('sides must be greater than 0')
+        elif b + c <= a:
+            raise TriangleError('sides must be greater than 0')
+    except TriangleError as err:
+        raise err
+
     if a == b == c:
         return 'equilateral'
     elif a == b:
